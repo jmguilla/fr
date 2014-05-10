@@ -1,11 +1,13 @@
-package com.kott.shortener
+package com.kott.fr
 
 import grails.events.Listener
 import grails.transaction.Transactional
 
 import org.springframework.transaction.annotation.Propagation
 
-import com.kott.shortener.user.exceptions.CannotCreateUserException
+import com.kott.fr.User;
+import com.kott.fr.UserRole;
+import com.kott.fr.user.exceptions.CannotCreateUserException
 
 @Transactional
 class UserService {

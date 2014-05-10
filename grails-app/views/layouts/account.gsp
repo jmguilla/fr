@@ -14,7 +14,7 @@
 		<g:render template="/shared/analytics" />
 		
 		<title>
-			<g:layoutTitle default="Shaddy"/>
+			<g:layoutTitle default="fr"/>
 		</title>
 		
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,7 +22,7 @@
 		<r:layoutResources />
 	</head>
 	
-	<body ng-app="shortener"
+	<body ng-app="frApp"
 			ng-controller="MainCtrl">
 			
 		<!-- facebook share button -->
@@ -37,8 +37,7 @@
 			
 		<g:render template="/shared/nav" />
 		
-		<div class="container"
-				ng-controller="UserCtrl">
+		<div class="container">
 			
 			<div class="row">
 				<div id="paramsNav"
@@ -46,11 +45,6 @@
 					<ul class="nav nav-pills nav-stacked">
 					  <li class="${(controllerName == 'user' && actionName == 'show' ) ? 'active' : ''}"><g:link
 							controller="user" action="show">Resume</g:link>
-					  </li>
-					  <li class="${(controllerName == 'mapping' && actionName == 'list' ) ? 'active' : ''}"
-					  		ng-controller="MappingCtrl" ng-init="getList()">
-					  	<g:link controller="mapping" action="list">
-							<span class="badge pull-right">{{mappings.length}}</span>My urls</g:link>
 					  </li>
 					  <li class="${(controllerName == 'user' && actionName == 'edit' ) ? 'active' : ''}"><g:link
 							controller="user" action="edit">Settings</g:link></li>

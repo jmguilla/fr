@@ -1,3 +1,3 @@
-var shortenerFilters = angular.module('shortenerFilters', []);
+var filters = angular.module('filters', []);
 
 // useless?

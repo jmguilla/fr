@@ -3,7 +3,7 @@
 	<head>
 		<meta name="layout" content="account" />
 		
-		<title>Shaddy - Settings</title>
+		<title>fr - Settings</title>
 		
 		<r:require module="application" />
 	

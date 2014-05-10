@@ -1,7 +1,7 @@
-package com.kott.shortener.user.exceptions
+package com.kott.fr.user.exceptions
 
-import com.kott.shortener.User
-import com.kott.shortener.UserRole
+import com.kott.fr.User
+import com.kott.fr.UserRole
 
 class CannotCreateUserException extends RuntimeException {
   String message

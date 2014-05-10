@@ -1,6 +1,6 @@
-package com.kott.shortener
+package com.kott.fr
 
-import com.kott.shortener.User
+import com.kott.fr.User
 
 class FBUser {
 

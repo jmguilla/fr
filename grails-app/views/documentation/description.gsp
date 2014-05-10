@@ -3,7 +3,7 @@
 	<head>
 		<meta name="layout" content="main"/>
 		
-		<title>Shaddy - What is Shaddy?</title>
+		<title>fr - What is fr?</title>
 		
 		<r:require module="application"/>
 		

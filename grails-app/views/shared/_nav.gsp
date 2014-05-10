@@ -17,7 +17,7 @@
 				<li class="dropdown">
           			<a href="#" class="dropdown-toggle" data-toggle="dropdown">About<b class="caret"></b></a>
 					<ul class="dropdown-menu">
-			            <li><g:link	controller="documentation" action="description">What is Shaddy?</g:link></li>
+			            <li><g:link	controller="documentation" action="description">What is fr?</g:link></li>
 			            <li><g:link	controller="documentation" action="faq">FAQ</g:link></li>
 			            <li><g:link	controller="documentation" action="terms">Terms</g:link></li>
 			        </ul>

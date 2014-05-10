@@ -1,4 +1,4 @@
-package com.kott.shortener
+package com.kott.fr
 
 import grails.transaction.Transactional
 
@@ -16,6 +16,7 @@ import com.google.api.client.util.Base64
 import com.google.api.services.analytics.Analytics
 import com.google.api.services.analytics.AnalyticsScopes
 import com.google.api.services.analytics.Analytics.Data.Ga.Get
+import com.kott.fr.User;
 
 /**
  * This is the service to interact with google analytics stuffs
@@ -27,8 +28,6 @@ class AnalyticsService {
 
   // for holding the configuration
   def grailsApplication
-  // for interacting with mappings
-  def mappingService
 
   def HttpTransport HTTP_TRANSPORT = new NetHttpTransport()
   def JsonFactory JSON_FACTORY = JacksonFactory.getDefaultInstance()
@@ -54,33 +53,6 @@ class AnalyticsService {
 
   def Analytics client = new Analytics.Builder(httpTransport, JSON_FACTORY, null)
   .setHttpRequestInitializer(credential)
-  .setApplicationName("shortener").build()
+  .setApplicationName("fr").build()
 
-  /**
-   * Retrieves {@link Mapping} statistics based on google analytics data
-   * @param mappings
-   * 
-   * @return empty object if parameter is null or empty, data formatted <a href="https://developers.google.com/analytics/devguides/reporting/core/v3/reference#output">as a dataTable</a> otherwise.
-   */
-  def retrieveStats(User user = null, Set<Mapping> mappings = new HashSet<Mapping>()) {
-    Get get = client.data().ga().get(grailsApplication.config.google.analytics.statsProfileId , "2005-01-01", "today", "ga:visits");
-    get.setDimensions("ga:pagePath");
-    get.setMetrics("ga:pageviews");
-    get.setSort("-ga:pageviews");
-    if(user){
-      get.setQuotaUser(user.id as String);
-    }
-    get.setOutput("dataTable");
-    def pagePathFilter = ""
-    if(mappings){
-      for(int i = 0; i < mappings.size(); i++){
-        pagePathFilter += "ga:pagePath==/" + mappingService.getShortId(mappings[i])
-        if(i < mappings.size() - 1){
-          pagePathFilter += ","
-        }
-      }
-      get.setFilters(pagePathFilter)
-    }
-    get.execute()
-  }
 }

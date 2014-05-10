@@ -3,7 +3,7 @@
 	<head>
 		<meta name="layout" content="main"/>
 		
-		<title>Shaddy - Terms & Conditions</title>
+		<title>fr - Terms & Conditions</title>
 		
 		<r:require module="application"/>
 		

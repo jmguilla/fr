@@ -1,4 +1,6 @@
-package com.kott.shortener
+package com.kott.fr
+
+import com.kott.fr.DocumentationController;
 
 import grails.test.mixin.TestFor
 import spock.lang.Specification

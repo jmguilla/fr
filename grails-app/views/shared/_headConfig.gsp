@@ -29,7 +29,7 @@
 <!-- bootstrap template -->
 <script src="/js/libs/ui-bootstrap-tpls-0.10.0.js"></script>
 
-<!-- shortener js -->
+<!-- app js -->
 <script src="/js/app.js"></script>
 <script src="/js/services.js"></script>
 <script src="/js/filters.js"></script>

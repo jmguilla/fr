@@ -1,10 +1,10 @@
 // Main controller
-var shortener = angular.module("shortener", [
+var frApp = angular.module("frApp", [
     "ngRoute", 
-    "shortenerControllers",
-    "shortenerServices", 
-    "shortenerFilters", 
-    "shortenerDirectives",
+    "controllers",
+    "services", 
+    "filters", 
+    "directives",
     "ui.bootstrap"
 ]);
 
@@ -24,7 +24,7 @@ angular.module('ui.bootstrap.carousel', ['ui.bootstrap.transition'])
 }]);
 
 /* no use for the moment
-shortener.config(["$routeProvider",
+app.config(["$routeProvider",
     function($routeProvider){
 	
 		$routeProvider.

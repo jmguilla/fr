@@ -1,0 +1,82 @@
+﻿clean
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	renamed:    grails-app/controllers/com/kott/shortener/DocumentationController.groovy -> grails-app/controllers/com/kott/fr/DocumentationController.groovy
+#	renamed:    grails-app/controllers/com/kott/shortener/RootController.groovy -> grails-app/controllers/com/kott/fr/RootController.groovy
+#	renamed:    grails-app/controllers/com/kott/shortener/UserController.groovy -> grails-app/controllers/com/kott/fr/UserController.groovy
+#	deleted:    grails-app/controllers/com/kott/shortener/MappingController.groovy
+#	renamed:    grails-app/domain/com/kott/shortener/FBUser.groovy -> grails-app/domain/com/kott/fr/FBUser.groovy
+#	renamed:    grails-app/domain/com/kott/shortener/Role.groovy -> grails-app/domain/com/kott/fr/Role.groovy
+#	renamed:    grails-app/domain/com/kott/shortener/User.groovy -> grails-app/domain/com/kott/fr/User.groovy
+#	renamed:    grails-app/domain/com/kott/shortener/UserRole.groovy -> grails-app/domain/com/kott/fr/UserRole.groovy
+#	deleted:    grails-app/domain/com/kott/shortener/Mapping.groovy
+#	deleted:    grails-app/domain/com/kott/shortener/json/JSONMapping.groovy
+#	renamed:    grails-app/services/com/kott/shortener/AnalyticsService.groovy -> grails-app/services/com/kott/fr/AnalyticsService.groovy
+#	renamed:    grails-app/services/com/kott/shortener/UserService.groovy -> grails-app/services/com/kott/fr/UserService.groovy
+#	deleted:    grails-app/services/com/kott/shortener/MappingService.groovy
+#	renamed:    src/groovy/com/kott/shortener/user/exceptions/CannotCreateUserException.groovy -> src/groovy/com/kott/fr/user/exceptions/CannotCreateUserException.groovy
+#	renamed:    src/groovy/com/kott/shortener/user/exceptions/CannotSendConfirmationEmail.groovy -> src/groovy/com/kott/fr/user/exceptions/CannotSendConfirmationEmail.groovy
+#	deleted:    src/groovy/com/kott/shortener/remuneration/PercentageSimple.groovy
+#	renamed:    test/unit/com/kott/shortener/AnalyticsServiceSpec.groovy -> test/unit/com/kott/fr/AnalyticsServiceSpec.groovy
+#	renamed:    test/unit/com/kott/shortener/DocumentationControllerSpec.groovy -> test/unit/com/kott/fr/DocumentationControllerSpec.groovy
+#	renamed:    test/unit/com/kott/shortener/RootControllerSpec.groovy -> test/unit/com/kott/fr/RootControllerSpec.groovy
+#	renamed:    test/unit/com/kott/shortener/UserControllerSpec.groovy -> test/unit/com/kott/fr/UserControllerSpec.groovy
+#	renamed:    test/unit/com/kott/shortener/UserServiceSpec.groovy -> test/unit/com/kott/fr/UserServiceSpec.groovy
+#	deleted:    test/unit/com/kott/shortener/MappingControllerSpec.groovy
+#	deleted:    test/unit/com/kott/shortener/MappingServiceSpec.groovy
+#	deleted:    test/unit/com/kott/shortener/MappingSpec.groovy
+#
+# Changes not staged for commit:
+#   (use "git add/rm <file>..." to update what will be committed)
+#   (use "git checkout -- <file>..." to discard changes in working directory)
+#
+#	modified:   README.md
+#	modified:   application.properties
+#	modified:   grails-app/conf/BootStrap.groovy
+#	modified:   grails-app/conf/Config.groovy
+#	modified:   grails-app/conf/UrlMappings.groovy
+#	modified:   grails-app/controllers/com/kott/fr/DocumentationController.groovy
+#	modified:   grails-app/controllers/com/kott/fr/RootController.groovy
+#	modified:   grails-app/controllers/com/kott/fr/UserController.groovy
+#	modified:   grails-app/domain/com/kott/fr/FBUser.groovy
+#	modified:   grails-app/domain/com/kott/fr/Role.groovy
+#	modified:   grails-app/domain/com/kott/fr/User.groovy
+#	modified:   grails-app/domain/com/kott/fr/UserRole.groovy
+#	modified:   grails-app/i18n/messages.properties
+#	modified:   grails-app/i18n/messages_fr.properties
+#	modified:   grails-app/services/com/kott/fr/AnalyticsService.groovy
+#	modified:   grails-app/services/com/kott/fr/UserService.groovy
+#	modified:   grails-app/views/documentation/description.gsp
+#	modified:   grails-app/views/documentation/faq.gsp
+#	modified:   grails-app/views/documentation/terms.gsp
+#	modified:   grails-app/views/index.gsp
+#	modified:   grails-app/views/layouts/account.gsp
+#	modified:   grails-app/views/layouts/main.gsp
+#	deleted:    grails-app/views/mapping/create.gsp
+#	deleted:    grails-app/views/mapping/list.gsp
+#	deleted:    grails-app/views/mapping/redirect.gsp
+#	deleted:    grails-app/views/mapping/show.gsp
+#	modified:   grails-app/views/shared/_analytics.gsp
+#	modified:   grails-app/views/shared/_headConfig.gsp
+#	modified:   grails-app/views/shared/_nav.gsp
+#	modified:   grails-app/views/user/create.gsp
+#	modified:   grails-app/views/user/edit.gsp
+#	modified:   grails-app/views/user/show.gsp
+#	modified:   src/groovy/com/kott/fr/user/exceptions/CannotCreateUserException.groovy
+#	modified:   src/groovy/com/kott/fr/user/exceptions/CannotSendConfirmationEmail.groovy
+#	modified:   test/unit/com/kott/fr/AnalyticsServiceSpec.groovy
+#	modified:   test/unit/com/kott/fr/DocumentationControllerSpec.groovy
+#	modified:   test/unit/com/kott/fr/RootControllerSpec.groovy
+#	modified:   test/unit/com/kott/fr/UserControllerSpec.groovy
+#	modified:   test/unit/com/kott/fr/UserServiceSpec.groovy
+#	modified:   web-app/js/app.js
+#	modified:   web-app/js/controllers.js
+#	modified:   web-app/js/directives.js
+#	modified:   web-app/js/filters.js
+#	modified:   web-app/js/services.js
+#
+

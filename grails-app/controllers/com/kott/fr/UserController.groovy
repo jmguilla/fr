@@ -1,10 +1,11 @@
-package com.kott.shortener
+package com.kott.fr
 
 import grails.converters.JSON
 import grails.plugin.springsecurity.annotation.Secured
 import grails.transaction.Transactional
 
-import com.kott.shortener.user.exceptions.CannotCreateUserException
+import com.kott.fr.User;
+import com.kott.fr.user.exceptions.CannotCreateUserException;
 
 
 class UserController {

@@ -14,7 +14,7 @@
 		<g:render template="/shared/analytics" />
 
 		<title>
-			<g:layoutTitle default="Shaddy"/>
+			<g:layoutTitle default="fr"/>
 		</title>
 		
 		
@@ -23,7 +23,7 @@
 		<r:layoutResources />
 	</head>
 	
-	<body ng-app="shortener"
+	<body ng-app="frApp"
 			ng-controller="MainCtrl">
 	
 		<!-- facebook share button -->

@@ -1,4 +1,4 @@
-package com.kott.shortener
+package com.kott.fr
 
 import grails.plugin.springsecurity.annotation.Secured
 

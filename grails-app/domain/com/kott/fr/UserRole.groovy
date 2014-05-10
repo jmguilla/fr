@@ -1,4 +1,4 @@
-package com.kott.shortener
+package com.kott.fr
 
 import org.apache.commons.lang.builder.HashCodeBuilder
 

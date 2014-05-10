@@ -10,7 +10,7 @@
 // if (System.properties["${appName}.config.location"]) {
 //    grails.config.locations << "file:" + System.properties["${appName}.config.location"]
 // }
-grails.app.name = "shortener"
+grails.app.name = "fr"
 grails.app.context = "/"
 grails.project.groupId = appName // change this to alter the default package name and Maven publishing destination
 
@@ -116,6 +116,7 @@ environments {
       grails.serverURL = System.getenv("APP_LAN_URL")
     }
   }
+  // TODO change that id
   production {
     grails.logging.jul.usebridge = false
     grails.serverURL = "http://app-shortener.rhcloud.com"
@@ -145,11 +146,11 @@ log4j = {
 
 
 // Added by the Spring Security Core plugin:
-grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.kott.shortener.User'
-grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.kott.shortener.UserRole'
-grails.plugin.springsecurity.authority.className = 'com.kott.shortener.Role'
+grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.kott.fr.User'
+grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.kott.fr.UserRole'
+grails.plugin.springsecurity.authority.className = 'com.kott.fr.Role'
 grails.plugin.springsecurity.userLookup.usernamePropertyName = 'email'
-grails.plugin.springsecurity.facebook.domain.classname='com.kott.shortener.FBUser'
+grails.plugin.springsecurity.facebook.domain.classname='com.kott.fr.FBUser'
 grails.plugin.springsecurity.facebook.appId='697131890310012'
 if(!System.getenv("FB_APP_SECRET")){
   throw new IllegalStateException("Please set FB_APP_SECRET environment variable.")

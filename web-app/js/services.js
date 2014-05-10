@@ -1,6 +1,6 @@
-var shortenerServices = angular.module("shortenerServices", ["ngResource"]);
+var services = angular.module("services", ["ngResource"]);
 
-shortenerServices.factory('User', function($resource){
+services.factory('User', function($resource){
 	return $resource('/user/:actionId/:userId', {actionId: '', userId: '@id'}, {
 		getUser: {
 			method: 'GET',
@@ -37,7 +37,7 @@ shortenerServices.factory('User', function($resource){
 	});
 })
 
-shortenerServices.factory('GrailsNavigation', function(){
+services.factory('GrailsNavigation', function(){
 	return {
 		navigateTo: function(controller, action, id) {
 			window.location = "/" + controller + "/" + action + "/"+ (id ? id : "");
@@ -45,7 +45,7 @@ shortenerServices.factory('GrailsNavigation', function(){
 	};
 })
 
-shortenerServices.factory('Alert', function($rootScope, $timeout){
+services.factory('Alert', function($rootScope, $timeout){
 	return {
 	    addAlert: function(alert, timeout) {
 	    	// verify alert coherence
@@ -76,63 +76,4 @@ shortenerServices.factory('Alert', function($rootScope, $timeout){
 	    	$rootScope.alerts = [];
 	    }
 	  };
-})
-
-shortenerServices.factory('Mapping', function($resource){
-	return $resource('/mapping/:actionId', {actionId:'', userID:'@id'}, {
-		create: {
-			method: 'PUT',
-			params: {
-				actionId: 'create'
-			},
-			headers: {
-  			'Content-Type': 'application/json',
-  			'Accept': 'application/json'
-			}
-		},
-		
-		retrieve: {
-			method: 'GET',
-			params: {
-				actionId: 'retrieveAsJSON'
-			},
-			headers: {
-  			'Content-Type': 'application/json',
-  			'Accept': 'application/json'
-			}
-		},
-		
-		retrieveAll: {
-			method: 'GET',
-			params: {
-				actionId: 'retrieveAll'
-			},
-			headers: {
-  			'Content-Type': 'application/json',
-  			'Accept': 'application/json'
-			}
-		},
-		
-		getAllStats: {
-			method: 'GET',
-			params: {
-				actionId: 'stats'
-			},
-			headers: {
-  			'Content-Type': 'application/json',
-  			'Accept': 'application/json'
-			}
-		},
-		
-		getAllRetribution: {
-			method: 'GET',
-			params: {
-				actionId: 'remuneration'
-			},
-			headers: {
-  			'Content-Type': 'application/json',
-  			'Accept': 'application/json'
-			}
-		}
-	});
 })

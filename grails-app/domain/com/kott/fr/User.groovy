@@ -1,4 +1,4 @@
-package com.kott.shortener
+package com.kott.fr
 
 class User {
 
@@ -12,7 +12,7 @@ class User {
   boolean accountLocked
   boolean passwordExpired
   
-  static hasMany = [mappings: Mapping]
+//  static hasMany = [mappings: Mapping]
 
   static transients = ['springSecurityService']
 

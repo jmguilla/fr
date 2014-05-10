@@ -1,4 +1,6 @@
-package com.kott.shortener
+package com.kott.fr
+
+import com.kott.fr.AnalyticsService;
 
 import grails.test.mixin.TestFor
 import spock.lang.Specification
@@ -6,8 +8,8 @@ import spock.lang.Specification
 /**
  * See the API for {@link grails.test.mixin.services.ServiceUnitTestMixin} for usage instructions
  */
-@TestFor(MappingService)
-class MappingServiceSpec extends Specification {
+@TestFor(AnalyticsService)
+class AnalyticsServiceSpec extends Specification {
 
     def setup() {
     }

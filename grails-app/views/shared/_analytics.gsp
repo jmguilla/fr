@@ -3,10 +3,14 @@
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-  
+
+
+  <!-- TODO change that id -->
   <g:if env="production">
   ga('create', 'UA-15228150-7', 'app-shortener.rhcloud.com');
   </g:if>
+
+  
   <g:else>
   <!-- ga('create', 'UA-15228150-7',  {'cookieDomain': 'none'}); -->
   ga('create', 'UA-15228150-7', 'app-shortener.rhcloud.com');

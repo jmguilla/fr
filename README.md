@@ -1,2 +1,2 @@
-shortener
+fr
 =========

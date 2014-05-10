@@ -3,7 +3,7 @@
 	<head>
 	<meta name='layout' content='main' />
 	
-	<title><g:message code="Shaddy - Register" /></title>
+	<title><g:message code="fr - Register" /></title>
 	
 	<r:require module="application" />
 	

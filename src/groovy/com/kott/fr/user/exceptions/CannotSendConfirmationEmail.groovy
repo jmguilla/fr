@@ -1,4 +1,4 @@
-package com.kott.shortener.user.exceptions
+package com.kott.fr.user.exceptions
 
 class CannotSendConfirmationEmail extends RuntimeException {
 
