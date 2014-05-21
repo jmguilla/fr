@@ -110,7 +110,7 @@ environments {
     grails.logging.jul.usebridge = true
     if(!System.getenv("APP_LAN_URL")){
       println "/!\\ Note that OAuth features require an appropriate server url /!\\"
-      println "Current config for FB: http://localhost:9090"
+      println "Current config: http://localhost:9090"
       println "No LAN address set, you can do it by setting APP_LAN_URL environment variable"
     }else{
       grails.serverURL = System.getenv("APP_LAN_URL")
@@ -159,11 +159,12 @@ grails.plugin.springsecurity.facebook.secret=System.getenv("FB_APP_SECRET")
 grails.plugin.springsecurity.securityConfigType = "Annotation"
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
   '/':                              ['permitAll'],
-  '/partials/**':					          ['permitAll'],
-  '/user/**':						            ['permitAll'],
+  '/partials/**':					['permitAll'],
+  '/login/**':                      ['permitAll'],
+  '/logout/**':                     ['permitAll'],
+  '/oauth/**':                      ['permitAll'],
   '/*':                             ['permitAll'],
   '/dbconsole/*':                   ['permitAll'],
-  '/logout/index':					        ['permitAll'],
   '/emailConfirmation/*':           ['permitAll'],
   '/fb/*':                          ['permitAll'],
   '/**/js/**':                      ['permitAll'],
@@ -212,3 +213,50 @@ google.analytics.statsProfileId = "ga:83491938"
 
 grails.plugin.springsecurity.facebook.filter.processUrl = '/fb/j_spring_security_facebook_check'
 grails.plugin.springsecurity.facebook.filter.redirect.redirectFromUrl = '/fb/j_spring_security_facebook_redirect'
+
+def baseURL = grails.serverURL ?: "http://localhost:${System.getProperty('server.port', '8080')}/${appName}"
+
+oauth {
+	debug = true
+	providers {
+		facebook {
+			api = org.scribe.builder.api.FacebookApi
+			key = 'oauth_facebook_key'
+			secret = 'oauth_facebook_secret'
+			successUri = '/oauth/facebook/success'
+			failureUri = '/oauth/facebook/failure'
+			callback = "${baseURL}/oauth/facebook/callback"
+		}
+		twitter {
+			api = org.scribe.builder.api.TwitterApi
+			key = 'oauth_twitter_key'
+			secret = 'oauth_twitter_secret'
+			successUri = '/oauth/twitter/success'
+			failureUri = '/oauth/twitter/failure'
+			callback = "${baseURL}/oauth/twitter/callback"
+		}
+		linkedin {
+			api = org.scribe.builder.api.LinkedInApi
+			key = 'oauth_linkedin_key'
+			secret = 'oauth_linkedin_secret'
+			successUri = '/oauth/linkedin/success'
+			failureUri = '/oauth/linkedin/failure'
+			callback = "${baseURL}/oauth/linkedin/callback"
+		}
+		google {
+			api = org.grails.plugin.springsecurity.oauth.GoogleApi20
+			key = 'oauth_google_key'
+			secret = 'oauth_google_secret'
+			successUri = '/oauth/google/success'
+			failureUri = '/oauth/google/failure'
+			callback = "${baseURL}/oauth/google/callback"
+			scope = 'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email'
+		}
+	}
+}
+
+grails.plugin.springsecurity.oauth.active = true
+grails.plugin.springsecurity.oauth.domainClass = 'OAuthID'
+grails.plugin.springsecurity.oauth.userLookup.oAuthIdsPropertyName = 'oAuthIDs'
+grails.plugin.springsecurity.oauth.registration.askToLinkOrCreateAccountUri = '/oauth/askToLinkOrCreateAccount'
+grails.plugin.springsecurity.oauth.registration.roleNames = ['ROLE_USER']

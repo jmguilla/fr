@@ -51,7 +51,6 @@ grails.project.dependency.resolution = {
 
     // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes e.g.
     compile 'com.google.http-client:google-http-client-jackson2:1.17.0-rc'
-
     compile 'com.google.apis:google-api-services-analytics:v3-rev83-1.17.0-rc'
     runtime 'mysql:mysql-connector-java:5.1.24'
     runtime 'c3p0:c3p0:0.9.1.2'
@@ -68,7 +67,8 @@ grails.project.dependency.resolution = {
     compile ':cache:1.1.1'
     compile ":spring-security-core:2.0-RC2"
     compile ":spring-security-facebook:0.15.2-CORE2"
-
+	compile ":spring-security-oauth:2.0.2"
+    compile ":spring-security-oauth-google:0.2"
     // plugins needed at runtime but not for compilation
     runtime ":hibernate:3.6.10.2" // or ":hibernate4:4.1.11.2"
     runtime ":database-migration:1.3.5"
