@@ -7,6 +7,7 @@ class User {
   String email
   String username
   String password
+  Date signin
   boolean enabled
   boolean accountExpired
   boolean accountLocked
@@ -20,6 +21,7 @@ class User {
     email nullable: false, blank: false, unique: true, email: true
     username nullable: true, blank: false
     password blank: false
+	signin nullable: false, blank: false
   }
 
   static mapping = { password column: '`password`' }
@@ -36,6 +38,12 @@ class User {
     if (isDirty('password')) {
       encodePassword()
     }
+  }
+  
+  def beforeValidate() {
+	  if(!signin){
+		  signin = new Date()
+	  }
   }
 
   protected void encodePassword() {
