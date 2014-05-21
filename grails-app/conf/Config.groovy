@@ -150,6 +150,8 @@ grails.plugin.springsecurity.userLookup.userDomainClassName = 'com.kott.fr.User'
 grails.plugin.springsecurity.userLookup.authorityJoinClassName = 'com.kott.fr.UserRole'
 grails.plugin.springsecurity.authority.className = 'com.kott.fr.Role'
 grails.plugin.springsecurity.userLookup.usernamePropertyName = 'email'
+
+
 grails.plugin.springsecurity.facebook.domain.classname='com.kott.fr.FBUser'
 grails.plugin.springsecurity.facebook.appId='697131890310012'
 if(!System.getenv("FB_APP_SECRET")){
@@ -159,19 +161,16 @@ grails.plugin.springsecurity.facebook.secret=System.getenv("FB_APP_SECRET")
 grails.plugin.springsecurity.securityConfigType = "Annotation"
 grails.plugin.springsecurity.controllerAnnotations.staticRules = [
   '/':                              ['permitAll'],
+  '/oauth/*':                       ['permitAll'],
   '/partials/**':					['permitAll'],
   '/login/**':                      ['permitAll'],
   '/logout/**':                     ['permitAll'],
-  '/oauth/**':                      ['permitAll'],
-  '/*':                             ['permitAll'],
   '/dbconsole/*':                   ['permitAll'],
   '/emailConfirmation/*':           ['permitAll'],
-  '/fb/*':                          ['permitAll'],
   '/**/js/**':                      ['permitAll'],
   '/**/css/**':                     ['permitAll'],
   '/**/images/**':                  ['permitAll'],
-  '/**/favicon.ico':                ['permitAll'],
-  
+  '/**/favicon.ico':                ['permitAll']
   ]
 
 grails.plugin.springsecurity.roleHierarchy = '''
@@ -219,36 +218,12 @@ def baseURL = grails.serverURL ?: "http://localhost:${System.getProperty('server
 oauth {
 	debug = true
 	providers {
-		facebook {
-			api = org.scribe.builder.api.FacebookApi
-			key = 'oauth_facebook_key'
-			secret = 'oauth_facebook_secret'
-			successUri = '/oauth/facebook/success'
-			failureUri = '/oauth/facebook/failure'
-			callback = "${baseURL}/oauth/facebook/callback"
-		}
-		twitter {
-			api = org.scribe.builder.api.TwitterApi
-			key = 'oauth_twitter_key'
-			secret = 'oauth_twitter_secret'
-			successUri = '/oauth/twitter/success'
-			failureUri = '/oauth/twitter/failure'
-			callback = "${baseURL}/oauth/twitter/callback"
-		}
-		linkedin {
-			api = org.scribe.builder.api.LinkedInApi
-			key = 'oauth_linkedin_key'
-			secret = 'oauth_linkedin_secret'
-			successUri = '/oauth/linkedin/success'
-			failureUri = '/oauth/linkedin/failure'
-			callback = "${baseURL}/oauth/linkedin/callback"
-		}
 		google {
 			api = org.grails.plugin.springsecurity.oauth.GoogleApi20
-			key = 'oauth_google_key'
-			secret = 'oauth_google_secret'
-			successUri = '/oauth/google/success'
-			failureUri = '/oauth/google/failure'
+			key = '1051867773103-nvcs8uh41q7vdsaod5anti265dl5b9rq.apps.googleusercontent.com'
+			secret = 'amNOkyEhXqVqahPs0hNICSE1'
+            successUri = '/oauth/success?provider=google'
+            failureUri = '/oauth/failure'
 			callback = "${baseURL}/oauth/google/callback"
 			scope = 'https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email'
 		}
@@ -256,7 +231,8 @@ oauth {
 }
 
 grails.plugin.springsecurity.oauth.active = true
-grails.plugin.springsecurity.oauth.domainClass = 'OAuthID'
+grails.plugin.springsecurity.oauth.domainClass = 'com.kott.fr.OAuthID'
 grails.plugin.springsecurity.oauth.userLookup.oAuthIdsPropertyName = 'oAuthIDs'
 grails.plugin.springsecurity.oauth.registration.askToLinkOrCreateAccountUri = '/oauth/askToLinkOrCreateAccount'
 grails.plugin.springsecurity.oauth.registration.roleNames = ['ROLE_USER']
+// Added by the Spring Security OAuth plugin:
